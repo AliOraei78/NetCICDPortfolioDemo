@@ -3,7 +3,7 @@
 A professional **CI/CD portfolio project** using **ASP.NET Core Web API**.  
 This repository demonstrates full CI/CD capabilities using GitHub Actions.
 
-![.NET](https://img.shields.io/badge/.NET-8.0-blue.svg)
+![.NET](https://img.shields.io/badge/.NET-10.0-blue.svg)
 ![GitHub Actions](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-green.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
@@ -26,7 +26,7 @@ This repository demonstrates full CI/CD capabilities using GitHub Actions.
 
 ## Technologies Used So Far
 
-- ASP.NET Core Web API (.NET 8)
+- ASP.NET Core Web API (.NET 10)
 - Git & GitHub (Branching, Pull Requests)
 - GitHub Actions (coming in future steps)
 
