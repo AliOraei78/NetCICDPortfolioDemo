@@ -51,6 +51,14 @@ This repository demonstrates full CI/CD capabilities using GitHub Actions.
 
 **Status:** Sensitive configuration is now managed securely through GitHub Secrets
 
+### Day 7: Advanced Workflow – Pull Requests + Multiple Jobs
+
+- Split the pipeline into multiple independent jobs (Build, Test, Publish)
+- Configured job dependencies using `needs`
+- Enabled parallel and optimized job execution
+- Improved triggers for Pull Requests
+- Delivered a more structured and readable CI/CD pipeline
+
 ## Technologies Used So Far
 
 - ASP.NET Core Web API (.NET 10)
