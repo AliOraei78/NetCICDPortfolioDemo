@@ -14,21 +14,24 @@ This repository demonstrates full CI/CD capabilities using GitHub Actions.
 - Created an ASP.NET Core Web API project in Visual Studio
 - Initialized Git and connected the repository to GitHub
 - Performed the initial push to the `main` branch
-- Created the initial README
 
 ### Day 2: Git & GitHub Basics + Professional README
 
-- Created a new branch (`feature/day2-git-basics`)
-- Committed and pushed changes to the feature branch
-- Created and merged a Pull Request
-- Added professional badges to the README
-- Structured the README to reflect daily progress
+- Created a new branch and worked with Pull Requests
+- Added badges to the README
+
+### Day 3: Introduction to GitHub Actions and First Build Workflow
+
+- Created `.github/workflows` directory
+- Wrote the first workflow file (`dotnet-build.yml`)
+- Configured triggers for `push` and `pull_request`
+- Enabled automatic build execution via GitHub Actions
 
 ## Technologies Used So Far
 
 - ASP.NET Core Web API (.NET 10)
 - Git & GitHub (Branching, Pull Requests)
-- GitHub Actions (coming in future steps)
+- GitHub Actions (Build Workflow)
 
 ## Running the Project Locally
 
@@ -37,3 +40,4 @@ cd NetCICDPortfolioDemo
 dotnet restore
 dotnet build
 dotnet run
+```
