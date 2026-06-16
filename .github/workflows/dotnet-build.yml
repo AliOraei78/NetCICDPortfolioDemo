@@ -1,4 +1,4 @@
-name: .NET CI - Build & Test
+name: .NET CI - Build, Test & Publish
 
 on:
   push:
@@ -25,5 +25,16 @@ jobs:
     - name: Build project
       run: dotnet build --no-restore --configuration Release
 
+
     - name: Test
       run: dotnet test NetCICDPortfolioDemo.Tests/NetCICDPortfolioDemo.Tests.csproj --no-build --configuration Release --verbosity normal
+
+    - name: Publish project
+      run: dotnet publish --no-build --configuration Release -o ./publish
+
+    - name: Upload artifact (published files)
+      uses: actions/upload-artifact@v4
+      with:
+        name: app-publish
+        path: ./publish
+        retention-days: 7

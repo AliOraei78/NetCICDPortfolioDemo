@@ -27,6 +27,21 @@ This repository demonstrates full CI/CD capabilities using GitHub Actions.
 - Configured triggers for `push` and `pull_request`
 - Enabled automatic build execution via GitHub Actions
 
+### Day 4: Adding Restore, Build, and Test to the Pipeline
+
+- Created a unit test project using xUnit (`NetCICDPortfolioDemo.Tests`)
+- Wrote a basic controller test
+- Updated the workflow to include Restore, Build, and Test stages
+- Fixed .NET version mismatch issue (net10.0 → net8.0)
+- Successfully executed tests in GitHub Actions
+
+### Day 5: Artifacts and Publish
+
+- Added a Publish stage to the workflow
+- Stored the build output as an artifact (`app-publish`)
+- Enabled downloading published files directly from GitHub Actions
+- Updated the complete workflow to include Build, Test, and Publish stages
+
 ## Technologies Used So Far
 
 - ASP.NET Core Web API (.NET 10)
