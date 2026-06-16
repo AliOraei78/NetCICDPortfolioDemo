@@ -43,7 +43,7 @@ jobs:
       run: dotnet restore
 
     - name: Run unit tests
-      run: dotnet test NetCICDPortfolioDemo.Tests/NetCICDPortfolioDemo.Tests.csproj --no-build --configuration Release --verbosity normal
+      run: dotnet test NetCICDPortfolioDemo.Tests/NetCICDPortfolioDemo.Tests.csproj --configuration Release --verbosity normal
 
   publish:
     needs: test
