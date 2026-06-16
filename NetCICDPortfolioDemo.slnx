@@ -3,5 +3,6 @@
     <File Path=".github/workflows/dotnet-build.yml" />
     <File Path="README.md" />
   </Folder>
+  <Project Path="NetCICDPortfolioDemo.Tests/NetCICDPortfolioDemo.Tests.csproj" Id="0073a87b-26b6-44af-b8b0-cd200fb45968" />
   <Project Path="NetCICDPortfolioDemo/NetCICDPortfolioDemo.csproj" />
 </Solution>
