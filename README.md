@@ -42,6 +42,15 @@ This repository demonstrates full CI/CD capabilities using GitHub Actions.
 - Enabled downloading published files directly from GitHub Actions
 - Updated the complete workflow to include Build, Test, and Publish stages
 
+### Day 6: Secrets and Environment Variables
+
+- Created GitHub Secrets (`API_KEY` and `CONNECTION_STRING`)
+- Accessed secrets in workflows using `${{ secrets.NAME }}`
+- Added a pipeline step to verify secret availability
+- Implemented secure secret management practices for CI/CD environments
+
+**Status:** Sensitive configuration is now managed securely through GitHub Secrets
+
 ## Technologies Used So Far
 
 - ASP.NET Core Web API (.NET 10)

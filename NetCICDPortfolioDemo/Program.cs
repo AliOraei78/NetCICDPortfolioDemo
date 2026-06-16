@@ -21,3 +21,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+var apiKey = Environment.GetEnvironmentVariable("API_KEY");
+Console.WriteLine($"API Key loaded: {(string.IsNullOrEmpty(apiKey) ? "Not set" : "Set")}");
