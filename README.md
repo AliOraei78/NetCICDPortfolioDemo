@@ -12,17 +12,10 @@ This repository demonstrates CI/CD skills using GitHub Actions.
 - Performed the initial push to the `main` branch
 - Created a structured and professional README
 
-## Technologies Used So Far
+### Day 2: Git & GitHub Basics + Professional README
 
-- ASP.NET Core Web API (.NET 8)
-- Git & GitHub
-- GitHub Actions (to be introduced in upcoming days)
-
-## Running the Project Locally
-
-```bash
-cd NetCICDPortfolioDemo
-dotnet restore
-dotnet build
-dotnet run
-```
+- Created a new branch (`feature/day2-git-basics`)
+- Committed and pushed changes to the feature branch
+- Created and merged a Pull Request
+- Added professional badges to the README
+- Structured the README to reflect daily progress
