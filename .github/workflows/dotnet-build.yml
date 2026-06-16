@@ -1,13 +1,14 @@
-name: .NET CI - Build, Test & Publish
+name: .NET CI - Advanced Pipeline
 
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+    types: [opened, synchronize, reopened]
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,7 +18,7 @@ jobs:
     - name: Setup .NET SDK
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: 10.0.x
 
     - name: Restore dependencies
       run: dotnet restore
@@ -25,8 +26,40 @@ jobs:
     - name: Build project
       run: dotnet build --no-restore --configuration Release
 
-    - name: Test
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 10.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Run unit tests
       run: dotnet test NetCICDPortfolioDemo.Tests/NetCICDPortfolioDemo.Tests.csproj --no-build --configuration Release --verbosity normal
+
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 10.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore
 
     - name: Publish project
       run: dotnet publish --no-build --configuration Release -o ./publish
@@ -37,8 +70,3 @@ jobs:
         name: app-publish
         path: ./publish
         retention-days: 7
-
-    - name: Display secrets status (for testing)
-      run: |
-        echo "API Key is set: ${{ secrets.API_KEY != '' }}"
-        echo "Connection String is set: ${{ secrets.CONNECTION_STRING != '' }}"
