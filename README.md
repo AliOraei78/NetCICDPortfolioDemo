@@ -59,6 +59,12 @@ This repository demonstrates full CI/CD capabilities using GitHub Actions.
 - Improved triggers for Pull Requests
 - Delivered a more structured and readable CI/CD pipeline
 
+### Day 8: Dockerizing the Project (.NET Docker)
+
+- Created an optimized multi-stage Dockerfile
+- Implemented Docker build job in the CI/CD pipeline
+- Prepared the project for containerization and modern deployment workflows
+
 ## Technologies Used So Far
 
 - ASP.NET Core Web API (.NET 10)
