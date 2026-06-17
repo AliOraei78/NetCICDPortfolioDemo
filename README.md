@@ -65,6 +65,14 @@ This repository demonstrates full CI/CD capabilities using GitHub Actions.
 - Implemented Docker build job in the CI/CD pipeline
 - Prepared the project for containerization and modern deployment workflows
 
+### Day 9: Push Docker Image to Docker Hub
+
+* Configure Docker Hub secrets (Username + Token)
+* Use official Docker Actions for login and image push
+* Push the image with both `latest` and commit SHA tags
+* Improve registry management and implement multi-stage Docker builds
+
+
 ## Technologies Used So Far
 
 - ASP.NET Core Web API (.NET 10)
