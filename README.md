@@ -72,6 +72,13 @@ This repository demonstrates full CI/CD capabilities using GitHub Actions.
 * Push the image with both `latest` and commit SHA tags
 * Improve registry management and implement multi-stage Docker builds
 
+### Day 10: Deployment to IIS (Real CD)
+
+* Publish the project for IIS
+* Configure the Application Pool and Website in IIS Manager
+* Install the .NET Hosting Bundle
+* Update the workflow to generate an IIS-compatible artifact
+* Successfully deploy the application locally on IIS
 
 ## Technologies Used So Far
 

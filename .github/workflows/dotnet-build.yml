@@ -45,6 +45,28 @@ jobs:
     - name: Run unit tests
       run: dotnet test NetCICDPortfolioDemo.Tests/NetCICDPortfolioDemo.Tests.csproj --configuration Release --verbosity normal
 
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Publish for IIS
+        run: dotnet publish --no-build --configuration Release -o ./publish-iis --runtime win-x64 --self-contained false
+
+      - name: Save IIS Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: iis-publish
+          path: ./publish-iis
+          retention-days: 7
+
   docker-build-and-push:
     needs: test
     runs-on: ubuntu-latest
