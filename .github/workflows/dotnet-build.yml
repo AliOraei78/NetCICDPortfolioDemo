@@ -58,7 +58,7 @@ jobs:
           dotnet-version: 8.0.x
 
       - name: Publish for IIS
-        run: dotnet publish --no-build --configuration Release -o ./publish-iis --runtime win-x64 --self-contained false
+        run: dotnet publish NetCICDPortfolioDemo/NetCICDPortfolioDemo.csproj --configuration Release -o ./publish-iis --runtime win-x64 --self-contained false
 
       - name: Save IIS Artifact
         uses: actions/upload-artifact@v4
