@@ -20,6 +20,14 @@ jobs:
       with:
         dotnet-version: 10.0.x
 
+    - name: Cache NuGet packages
+      uses: actions/cache@v4
+      with:
+        path: ~/.nuget/packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+        restore-keys: |
+          ${{ runner.os }}-nuget-
+
     - name: Restore dependencies
       run: dotnet restore NetCICDPortfolioDemo.slnx
 
@@ -70,6 +78,9 @@ jobs:
   docker-build-and-push:
     needs: test
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -88,4 +99,5 @@ jobs:
         tags: |
           ${{ secrets.DOCKERHUB_USERNAME }}/netcicdportfoliodemo:latest
           ${{ secrets.DOCKERHUB_USERNAME }}/netcicdportfoliodemo:${{ github.sha }}
-
+        cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/netcicdportfoliodemo:buildcache
+        cache-to: type=inline

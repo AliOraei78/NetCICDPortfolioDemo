@@ -80,6 +80,15 @@ This repository demonstrates full CI/CD capabilities using GitHub Actions.
 * Update the workflow to generate an IIS-compatible artifact
 * Successfully deploy the application locally on IIS
 
+### Day 11: Best Practices, Security, Caching, and Reusable Workflows
+
+* Add caching for NuGet packages and Docker layers
+* Improve security by applying least-privilege permissions for jobs
+* Apply CI/CD best practices (speed optimization and pipeline structure improvements)
+* Prepare the pipeline for reusable workflows
+* Production-ready pipeline
+
+
 ## Technologies Used So Far
 
 - ASP.NET Core Web API (.NET 10)
